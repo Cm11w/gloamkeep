@@ -1,5 +1,9 @@
 # GLOAMKEEP — Hold the Last Light
 
+[![make.fun · best-game-01](https://make.fun/badge/best-game-01.svg)](https://make.fun/bounty/best-game-01?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
+[![rank](https://make.fun/badge/best-game-01/Cm11w/gloamkeep/rank.svg)](https://make.fun/bounty/best-game-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
+[![reward](https://make.fun/badge/best-game-01/Cm11w/gloamkeep/reward.svg)](https://make.fun/bounty/best-game-01?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
+
 An original single-player arena survival game that plays fully offline in a
 desktop browser. You are the Keeper of the last lantern in a night glade.
 Shadows rise from the treeline in eight waves; gather the embers they drop,
@@ -81,3 +85,7 @@ vendor/             The kit's makefun-game.ts, unchanged
 ## License
 
 MIT — see `LICENSE`.
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=ywgem12g&utm_source=github&utm_medium=readme&utm_campaign=best-game-01) · AI agents build software for cash rewards</sub>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLOAMKEEP — Hold the Last Light</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main id="stage">
+  <div id="frame">
+    <canvas id="game-canvas" width="960" height="600"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <div class="bar hp-bar" title="Health"><div id="hp-fill" class="bar-fill"></div><span id="hp-text" class="bar-label"></span></div>
+        <div class="bar xp-bar" title="Embers to next level"><div id="xp-fill" class="bar-fill"></div><span id="level-text" class="bar-label"></span></div>
+      </div>
+      <div class="hud-center">
+        <span id="wave-text"></span>
+        <div class="bar dawn-bar" title="Progress toward dawn"><div id="dawn-fill" class="bar-fill"></div></div>
+        <span id="dawn-label">DAWN</span>
+      </div>
+      <div class="hud-right">
+        <span id="score-text"></span>
+        <div class="bar dash-bar" title="Dash readiness"><div id="dash-fill" class="bar-fill"></div><span id="dash-text" class="bar-label"></span></div>
+      </div>
+    </div>
+
+    <div id="boss-bar" class="hidden">
+      <span id="boss-name"></span>
+      <div class="bar boss-track"><div id="boss-fill" class="bar-fill"></div></div>
+    </div>
+
+    <div id="banner" class="hidden"></div>
+    <div id="hint" class="hidden">WASD / arrows — move · Mouse — aim · Hold click / Space — fire · Shift — dash · P — pause · M — sound</div>
+
+    <section id="screen-title" class="screen">
+      <p class="eyebrow">A night in the glade</p>
+      <h1>GLOAMKEEP</h1>
+      <p class="tagline">Hold the last light until dawn.</p>
+      <p class="story">Shadows rise from the treeline for eight waves. You are the Keeper: gather
+      the embers they drop, choose your boons, and stand against the Gloam Herald
+      when the night is at its darkest.</p>
+      <div class="controls-grid">
+        <span><b>WASD / ←↑↓→</b> Move</span>
+        <span><b>Mouse</b> Aim</span>
+        <span><b>Hold click / Space</b> Fire light</span>
+        <span><b>Shift</b> Dash (briefly untouchable)</span>
+        <span><b>P / Esc</b> Pause</span>
+        <span><b>M</b> Sound on / off</span>
+      </div>
+      <button id="start-button" class="big-button" type="button">Begin the Night</button>
+      <p id="best-score-text" class="best-score"></p>
+    </section>
+
+    <section id="screen-boon" class="screen hidden">
+      <p class="eyebrow">The lantern flares — level up!</p>
+      <h2>Choose a boon</h2>
+      <div id="boon-cards"></div>
+    </section>
+
+    <section id="screen-pause" class="screen hidden">
+      <p class="eyebrow">The night holds its breath</p>
+      <h2>Paused</h2>
+      <p class="story">WASD move · Mouse aim · Hold click fire · Shift dash · M sound</p>
+      <button id="resume-button" class="big-button" type="button">Resume</button>
+      <button id="restart-button-pause" class="small-button" type="button">Restart the night</button>
+      <button id="quit-button-pause" class="small-button" type="button">Back to title</button>
+    </section>
+
+    <section id="screen-victory" class="screen dawn-screen hidden">
+      <p class="eyebrow">Wave 8 held — the Herald has fallen</p>
+      <h1>DAWN BREAKS</h1>
+      <p class="tagline">The glade wakes. The light holds. You did it, Keeper.</p>
+      <p id="victory-stats" class="stats"></p>
+      <button id="restart-button-victory" class="big-button" type="button">Play Again</button>
+      <p class="key-hint">or press R</p>
+    </section>
+
+    <section id="screen-defeat" class="screen hidden">
+      <p class="eyebrow">The lantern gutters out…</p>
+      <h1>THE DARK TAKES THE GLADE</h1>
+      <p class="tagline">Dawn was so close. The Keeper rises again — try another night.</p>
+      <p id="defeat-stats" class="stats"></p>
+      <button id="restart-button-defeat" class="big-button" type="button">Try Again</button>
+      <p class="key-hint">or press R</p>
+    </section>
+
+    <div id="corner-buttons">
+      <button id="pause-button" type="button" title="Pause (P)">❚❚</button>
+      <button id="mute-button" type="button" aria-pressed="false" title="Sound (M)">♪ On</button>
+    </div>
+  </div>
+  <p id="credit">GLOAMKEEP — an original game. No network, no trackers: everything runs in this page.</p>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
